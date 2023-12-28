@@ -1,0 +1,21 @@
+stages:
+  - test
+  - build
+
+part_2:
+  stage: build
+  tags:
+    - python
+  artifacts:
+    paths:
+      - result.txt
+  script:
+    - echo START Deploy API!!
+    - docker-compose up --build server -d
+    - echo sleeping 5 seconds
+    - sleep 5
+    - echo Deploy API done!!!
+    - echo START Deploy app!!
+    - docker-compose up --build app
+    - docker cp lab_1_task_2-app-1:/app/result/result.txt ./result.txt
+    - echo end Deploy app!!

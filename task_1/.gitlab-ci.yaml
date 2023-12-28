@@ -1,0 +1,18 @@
+variables:
+  POW: 4
+  NUMBER: 2 
+
+stages:
+  - test
+  - build
+Job_1:
+  stage: build
+  tags:
+    - python
+  artifacts:
+    paths:
+      - result.txt
+  script:
+    - echo START BUILD!!!
+    - docker-compose up --build
+    - docker cp lab_1_task_1-app-1:/app/result/result.txt  ./result.txt

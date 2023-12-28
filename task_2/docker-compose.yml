@@ -1,0 +1,26 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: ./app/.
+    environment:
+      PORT: 8080
+      SERVER: "server"
+    volumes:
+      - .:/app/result
+    command: python /app/app.py
+
+  server:
+    build:
+      dockerfile: Dockerfile
+      context: ./server/.
+    volumes:
+      - .:/app/result
+    command: python /app/server.py
+
+
+networks:
+  part_2_network:
+    driver: 'bridge'

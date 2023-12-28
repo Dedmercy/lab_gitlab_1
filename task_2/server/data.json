@@ -1,0 +1,11 @@
+[
+    {"first_name": "Nikita", "middle_name": "Sergeevich", "last_name": "Ivanov", "grades": {"Math": 5, "Chemistry": 5, "It": 5}},
+    {"first_name": "Alexandr", "middle_name": "Ivanovich", "last_name": "Galkin", "grades": {"Math": 3, "Chemistry": 4, "It": 5}},
+    {"first_name": "Vladislav", "middle_name": "Ignatievich", "last_name": "Sushkin", "grades": {"Math": 5, "Chemistry": 4, "It": 4}},
+    {"first_name": "Alena", "middle_name": "Sergeevna", "last_name": "Sushkina", "grades": {"Math": 2, "Chemistry": 4, "It": 4}},
+    {"first_name": "Pavel", "middle_name": "Anatolievich", "last_name": "Kukish", "grades": {"Math": 3, "Chemistry": 4, "It": 4}},
+    {"first_name": "Alexandr", "middle_name": "Sergeevich", "last_name": "Beliy", "grades": {"Math": 4, "Chemistry": 4, "It": 4}},
+    {"first_name": "Denis", "middle_name": "Urievich", "last_name": "Kashin", "grades": {"Math": 5, "Chemistry": 2, "It": 4}},
+    {"first_name": "Damir", "middle_name": "Stepanovich", "last_name": "Cherniy", "grades":  {"Math": 2, "Chemistry": 4, "It": 3}},
+    {"first_name": "Anastasiya", "middle_name": "Pavlovna", "last_name": "Kilkina", "grades": {"Math": 5, "Chemistry": 5, "It": 5}}
+]

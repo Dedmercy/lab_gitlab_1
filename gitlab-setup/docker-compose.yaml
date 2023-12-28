@@ -1,0 +1,40 @@
+version: '3.8'
+
+services:
+ # glrt-BSKfQzsRtQHSwzWECx5r
+  gitlab-service:
+    image: gitlab/gitlab-ee:latest
+    container_name: gitlab
+    hostname: gitlab-service
+    shm_size: 256m
+    ports:
+      - '443:443'
+      - '80:80'
+      - '22:22'
+    volumes:
+      - /config:/etc/gitlab
+      - /logs:/var/log/gitlab
+      - /data:/var/opt/gitlab
+    restart: always
+    networks:
+      gitlab_network:
+        ipv4_address: 172.31.0.2
+
+  gitlab-runner:
+    image: gitlab/gitlab-runner:latest
+    container_name: gitlab-runner
+    volumes:
+      - /var/run/docker.sock:/var/run/docker+.sock
+      - /var/run/docker-cli.sock:/var/run/docker-cli.sock
+      - $PWD/runner-config:/etc/gitlab-runner/
+    restart: always
+    networks:
+      gitlab_network:
+        ipv4_address: 172.31.0.3
+
+networks:
+  gitlab_network:
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.31.0.0/16

@@ -1,0 +1,13 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      dockerfile: Dockerfile
+      context: .
+    environment:
+      NUMBER: $NUMBER
+      POW: $POW
+    volumes:
+      - .:/app/result
+    command: python /app/main.py && ls
